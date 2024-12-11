@@ -1,4 +1,6 @@
 ---
+import Home from '../components/Home.astro';
+import Experience from '../components/Experience.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,17 +9,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<div class="lg:mt-24">
-		<section class="min-h-screen container mx-auto flex flex-col lg:flex-row items-center max-w-2xl">
-			<div class="flex flex-col">
-				<div>
-					<p class="text-4xl font-black">Hola, soy Mario Zamora</p>
-				</div>
-				<div>
-					<p>
-						Desarrollador FullStack Ingeniero en desarrollo y gestión de Software
-					</p>
-				</div>
-			</div>
-		</section>
+		<Home />
+		<Experience />
 	</div>
 </Layout>
