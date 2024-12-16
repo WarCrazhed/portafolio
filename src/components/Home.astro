@@ -1,18 +1,69 @@
 ---
+import { Image } from "astro:assets";
 ---
-<section class="min-h-screen container mx-auto flex flex-col lg:flex-row items-center gap-3 max-w-2xl">
-    <div>Foto</div>
-    <div class="flex flex-col space-y-4">
-        <div class="flex flex-row items-center gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10">
-                <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
-            </svg>                            
-            <h1 class="text-4xl font-extrabold text-slate-800 dark:text-slate-200">Hola, soy Mario Zamora</h1>
-        </div>
-        <div>
-            <p class="text-lg text-slate-700 dark:text-slate-300 font-medium">
-                Soy un <span class="text-purple-600 dark:text-purple-500 font-bold">Desarrollador FullStack</span> apasionado por resolver problemas y construir herramientas digitales que marcan la diferencia. <span class="text-purple-600 dark:text-purple-500 font-bold">Ingeniero en Desarrollo y Gestión de Software</span>, siempre buscando nuevos desafíos.
-            </p>
-        </div>
+
+<section
+  class="min-h-screen container m-auto max-w-4xl flex flex-col justify-center gap-20"
+>
+  <div class="flex flex-row items-center gap-3">
+    <div class="text-4xl">👋</div>
+    <h1 class="text-4xl font-extrabold text-gray-800 dark:text-gray-200">
+      Hola, soy Mario Zamora
+    </h1>
+  </div>
+  <div class="flex flex-col lg:flex-row items-center gap-8">
+    <div>
+      <div
+        class="m-auto w-40 h-40 relative border-4 border-blue-500 rounded-full overflow-hidden"
+      >
+        <Image
+          src="/public/img/profile.jpg"
+          alt="Imagen de Perfil"
+          width="160"
+          height="160"
+          class="object-cover object-center h-40"
+        />
+      </div>
     </div>
+    <div class="flex flex-col space-y-4">
+      <div
+        class="text-lg text-gray-700 dark:text-gray-300 font-medium space-y-3"
+      >
+        <p>
+          <span
+            class="text-sm py-1 px-3 border border-blue-500 bg-sky-100/50 dark:bg-sky-900/50 rounded-full font-medium shadow mr-2"
+          >
+            Jalisco, México
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="inline size-6 text-blue-500"
+          >
+            <path
+              fill-rule="evenodd"
+              d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </p>
+        <p>
+          Soy un <span class="text-blue-500 font-bold"
+            >Desarrollador FullStack</span
+          > con experiencia en <span class="font-semibold"
+            >diseño de sistemas escalables</span
+          > e interfaces intuitivas, enfocado en resolver problemas y construir herramientas
+          digitales que generan impacto positivo.
+        </p>
+        <p>
+          Como <span class="text-blue-500 font-bold"
+            >Ingeniero en Desarrollo y Gestión de Software</span
+          >, destaco en el uso de tecnologías modernas como <span
+            class="font-semibold">React, Laravel, Docker y TailwindCSS</span
+          >. Siempre estoy en busca de nuevos desafíos que me permitan crecer y
+          aportar valor con soluciones innovadoras.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
