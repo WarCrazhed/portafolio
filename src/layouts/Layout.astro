@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Layout/Navbar.astro";
+import Networks from "../components/Networks.astro";
 ---
 
 <!doctype html>
@@ -22,10 +23,10 @@ import Navbar from "../components/Layout/Navbar.astro";
       }
     </script>
     <style>
-		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-	  * {
-		font-family: 'Montserrat';
-	  }
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        font-family: "Montserrat";
+      }
     </style>
   </head>
   <body
@@ -33,22 +34,29 @@ import Navbar from "../components/Layout/Navbar.astro";
   >
     <Navbar />
     <slot />
-  </body>
-  <footer
-    class="bg-gray-950 py-16 w-full flex flex-col md:flex-row lg:flex-row justify-start gap-3 items-center border-t border-t-gray-800"
-  >
-    <div class="container mx-auto">
-      <div class="flex flex-col items-center my-5 text-center">
-        <div class="text-white text-sm">
-          <p class="font-medium text-xl">
-            <span
-              class="transition-all duration-200 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text hover:text-transparent font-bold"
-              >Mario Zamora
-            </span>
-          </p>
-          <p class="text-xs">©{new Date().getFullYear()} Todos los derechos reservados</p>
+    <footer
+      class="bg-gray-950 py-16 w-full flex flex-col md:flex-row lg:flex-row justify-start gap-3 items-center border-t border-t-gray-800"
+    >
+      <div class="container m-auto max-w-4xl">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center my-5 gap-8"
+        >
+          <div class="text-white text-sm text-center lg:text-left">
+            <p class="font-medium text-xl">
+              <span
+                class="transition-all duration-200 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text hover:text-transparent font-bold"
+                >Mario Zamora
+              </span>
+            </p>
+            <p class="text-xs">
+              ©{new Date().getFullYear()} Todos los derechos reservados
+            </p>
+          </div>
+          <div class="text-white">
+            <Networks />
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </body>
 </html>
