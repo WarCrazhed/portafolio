@@ -25,6 +25,11 @@ export const skills = [
     name: "Python",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
   },
+  {
+    type: "Lenguajes",
+    name: "C#",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+  },
   // Frameworks/Librerías
   {
     type: "Frameworks/librerias",
@@ -60,7 +65,7 @@ export const skills = [
     type: "Frameworks/librerias",
     name: "Django",
     // ENLACE CORREGIDO: Usando 'django-plain' que suele ser más compatible
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" 
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
   },
   {
     type: "Frameworks/librerias",
