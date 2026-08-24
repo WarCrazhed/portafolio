@@ -50,6 +50,7 @@ const { title, description, image, tags, repoUrl, liveUrl } = Astro.props;
           <a
             href={liveUrl}
             target="_blank"
+            rel="noopener noreferrer"
             class="font-bold text-white bg-lime-600 hover:bg-lime-700 flex items-center gap-2 px-3 rounded-xl py-2"
             aria-label={`Ver demo en vivo de ${title}`}
           >
@@ -76,6 +77,7 @@ const { title, description, image, tags, repoUrl, liveUrl } = Astro.props;
           <a
             href={repoUrl}
             target="_blank"
+            rel="noopener noreferrer"
             class="font-bold text-white bg-blue-600 hover:bg-blue-700 flex items-center gap-2 px-3 rounded-xl py-2"
             aria-label={`Ver código fuente en GitHub de ${title}`}
           >

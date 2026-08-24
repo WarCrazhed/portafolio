@@ -4,13 +4,37 @@ import Networks from "../components/Networks.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Portafolio Mario Zamora</title>
+    <title>Mario Zamora — Desarrollador FullStack</title>
+    <meta
+      name="description"
+      content="Portafolio de Mario Zamora, Desarrollador FullStack e Ingeniero en Desarrollo y Gestión de Software. Experiencia en Laravel, React, TypeScript y despliegues con Docker."
+    />
+    <meta name="author" content="Mario Zamora" />
+    <link rel="canonical" href="https://mariozamoraportafolio.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mariozamoraportafolio.netlify.app/" />
+    <meta property="og:title" content="Mario Zamora — Desarrollador FullStack" />
+    <meta
+      property="og:description"
+      content="Portafolio de Mario Zamora, Desarrollador FullStack e Ingeniero en Desarrollo y Gestión de Software. Experiencia en Laravel, React, TypeScript y despliegues con Docker."
+    />
+    <meta
+      property="og:image"
+      content="https://mariozamoraportafolio.netlify.app/img/profile.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script>
       if (
         localStorage.theme === "dark" ||
@@ -22,12 +46,6 @@ import Networks from "../components/Networks.astro";
         document.documentElement.classList.remove("dark");
       }
     </script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-      * {
-        font-family: "Montserrat";
-      }
-    </style>
   </head>
   <body
     class="bg-gradient-to-br dark:bg-gradient-to-br from-gray-200 via-blue-200 to-purple-200 dark:from-blue-950 dark:via-purple-950 dark:to-blue-950 bg-cover dark:text-white"

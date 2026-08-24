@@ -120,4 +120,15 @@ export const skills = [
     name: "Docker",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
   },
+  // Herramientas IA
+  {
+    type: "Herramientas IA",
+    name: "Claude Code",
+    icon: "https://cdn.simpleicons.org/claude"
+  },
+  {
+    type: "Herramientas IA",
+    name: "OpenCode",
+    icon: "https://cdn.simpleicons.org/opencode"
+  },
 ];

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mariozamoraportafolio.netlify.app/sitemap-index.xml

@@ -15,7 +15,7 @@ import Carrito from "../images/projects/Carrito.png";
 export const projects = [
     {
         title: "Humana11 Página Web",
-        description: "Sitio web informativo y autogestionable para Humana 11, diseñado para presentar sus servicios de manera clara y accesible.",
+        description: "Sitio corporativo autogestionable con panel administrativo de contenidos, construido con el stack Laravel + React que establecí como estándar tras migrar la aplicación principal desde PHP nativo.",
         image: Humana11,
         tags: ["Laravel", "ReactJS", "TailwindCSS", "MariaDB"],
         repoUrl: null,
@@ -31,7 +31,7 @@ export const projects = [
     },
     {
         title: "Plataforma UHE",
-        description: "Plataforma educativa para la gestión de programas formativos, enfocada en brindar experiencias de aprendizaje organizadas y dinámicas.",
+        description: "Plataforma educativa Universidad Humana Empresaria para la gestión de programas formativos, con 40 usuarios activos por semana y experiencias de aprendizaje organizadas y dinámicas.",
         image: Uhe,
         tags: ["Laravel", "ReactJS", "TailwindCSS", "MariaDB"],
         repoUrl: null,
@@ -39,7 +39,7 @@ export const projects = [
     },
     {
         title: "Plataforma SuiteDO",
-        description: "Sistema integral para diagnósticos organizacionales y herramientas de Desarrollo Organizacional, facilitando la toma de decisiones estratégicas.",
+        description: "Sistema integral de diagnósticos de Desarrollo Organizacional que procesa hasta 1,500 evaluaciones mensuales para empresas cliente, facilitando la toma de decisiones estratégicas.",
         image: Suitedo,
         tags: ["Laravel", "ReactJS", "TypeScript", "TailwindCSS", "MariaDB"],
         repoUrl: null,
