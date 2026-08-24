@@ -1,0 +1,14 @@
+---
+// Encabezado de sección: índice en mono + título.
+const { index, title, as = "h2" } = Astro.props;
+const Heading = as;
+---
+
+<div class="flex flex-col gap-3">
+  <span class="font-mono text-[13px] tracking-[0.08em] text-accent">
+    {index} — <slot name="index-label">{title}</slot>
+  </span>
+  <Heading class="text-4xl font-semibold leading-[1.05] tracking-[-0.025em] lg:text-5xl">
+    <slot />
+  </Heading>
+</div>

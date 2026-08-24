@@ -1,134 +1,28 @@
-export const skills = [
-  // Lenguajes
+export const skillGroups = [
   {
-    type: "Lenguajes",
-    name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+    title: "Lenguajes",
+    items: ["TypeScript", "JavaScript", "PHP", "Python", "C#"],
   },
   {
-    type: "Lenguajes",
-    name: "TypeScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+    title: "Frameworks y librerías",
+    items: [
+      "Laravel",
+      "React",
+      "React Native",
+      "Astro",
+      "Vue",
+      "Tailwind",
+      "Django",
+      "Express",
+      "Bootstrap",
+    ],
   },
   {
-    type: "Lenguajes",
-    name: "React Native",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+    title: "Bases de datos",
+    items: ["MySQL / MariaDB", "PostgreSQL", "SQL Server", "MongoDB"],
   },
   {
-    type: "Lenguajes",
-    name: "Php",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-  },
-  {
-    type: "Lenguajes",
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-  },
-  {
-    type: "Lenguajes",
-    name: "C#",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-  },
-  // Frameworks/Librerías
-  {
-    type: "Frameworks/librerias",
-    name: "Laravel",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
-  },
-  {
-    type: "Frameworks/librerias",
-    name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-  },
-  {
-    type: "Frameworks/librerias",
-    name: "Astro",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg"
-  },
-  {
-    type: "Frameworks/librerias",
-    name: "VueJS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-  },
-  {
-    type: "Frameworks/librerias",
-    name: "TailwindCSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-  },
-  {
-    type: "Frameworks/librerias",
-    name: "Bootstrap",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-  },
-  {
-    type: "Frameworks/librerias",
-    name: "Django",
-    // ENLACE CORREGIDO: Usando 'django-plain' que suele ser más compatible
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
-  },
-  {
-    type: "Frameworks/librerias",
-    name: "Express",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
-  },
-  // Base de datos
-  {
-    type: "Base de datos",
-    name: "MySql",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-  },
-  {
-    type: "Base de datos",
-    name: "Sql Server",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
-  },
-  {
-    type: "Base de datos",
-    name: "PostgreSql",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-  },
-  {
-    type: "Base de datos",
-    name: "MongoDB",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
-  },
-  // Sistemas Operativos
-  {
-    type: "Sistemas Operativos",
-    name: "Windows",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg"
-  },
-  {
-    type: "Sistemas Operativos",
-    name: "Linux",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-  },
-  {
-    type: "Sistemas Operativos",
-    name: "Mac Os",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg"
-  },
-  // Otros
-  {
-    type: "Otros",
-    name: "Git/Github",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-  },
-  {
-    type: "Otros",
-    name: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-  },
-  // Herramientas IA
-  {
-    type: "Herramientas IA",
-    name: "Claude Code",
-    icon: "https://cdn.simpleicons.org/claude"
-  },
-  {
-    type: "Herramientas IA",
-    name: "OpenCode",
-    icon: "https://cdn.simpleicons.org/opencode"
+    title: "Infraestructura y herramientas",
+    items: ["Docker", "Linux", "Linode", "Git / GitHub", "Claude Code", "OpenCode"],
   },
 ];

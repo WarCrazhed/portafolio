@@ -1,0 +1,16 @@
+---
+// Chip en mono. `outline` para tecnologías de tarjetas/experiencia,
+// `filled` para el stack.
+const { variant = "outline" } = Astro.props;
+---
+
+<span
+  class:list={[
+    "rounded-md font-mono tracking-[0.04em]",
+    variant === "outline"
+      ? "border border-line px-2.5 py-1 text-[11px] text-muted"
+      : "bg-hairline px-3 py-1.5 text-[13px] text-ink",
+  ]}
+>
+  <slot />
+</span>

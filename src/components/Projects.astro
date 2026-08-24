@@ -1,45 +1,64 @@
 ---
-// src/sections/Proyects.astro
-import ProjectCard from "../components/ProjectCard.astro";
+import ProjectCard from "./ProjectCard.astro";
+import SectionHeading from "./SectionHeading.astro";
+import ArrowIcon from "./ArrowIcon.astro";
 import { projects } from "../assets/data/projects";
 
+const featured = projects.filter((p) => p.featured);
+const others = projects.filter((p) => !p.featured);
 ---
 
-<section
+<section id="projects" class="border-b border-hairline">
+  <div
+    class="mx-auto flex max-w-site flex-col gap-10 px-5 py-20 md:px-10 lg:gap-12 lg:px-16 lg:pb-24 lg:pt-28"
+  >
+    <SectionHeading index="01" title="Proyectos">Proyectos</SectionHeading>
 
-  class="bg-gray-50/50 dark:bg-gray-950/50 rounded-tl-full"
-
-  id="projects"
-
->
-
-<div
-
-  class="min-h-screen container mx-auto flex flex-col gap-12 max-w-4xl px-4 py-20"
-
->
-    <div class="flex items-center gap-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-blue-500">
-        <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
-        <path fill-rule="evenodd" d="M18.75 2.25H5.25A2.25 2.25 0 0 0 3 4.5v15c0 1.24.96 2.25 2.25 2.25h13.5A2.25 2.25 0 0 0 21 19.5V4.5A2.25 2.25 0 0 0 18.75 2.25ZM12 4.5a.75.75 0 0 0-.75.75v.75a.75.75 0 0 0 1.5 0V5.25a.75.75 0 0 0-.75-.75Zm0 15a3.75 3.75 0 1 1 0-7.5 3.75 3.75 0 0 1 0 7.5Z" clip-rule="evenodd" />
-      </svg>
-      
-      <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-200">
-        Mis Proyectos Destacados 🚀
-      </h2>
+    <div class="grid gap-5 md:grid-cols-2 lg:gap-6">
+      {featured.map((project) => <ProjectCard {...project} />)}
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="flex flex-col">
+      <div
+        class="grid grid-cols-12 gap-4 border-b border-line px-4 pb-3 font-mono text-[11px] uppercase tracking-[0.08em] text-dim"
+      >
+        <span class="col-span-8 md:col-span-4">Proyectos personales</span>
+        <span class="hidden md:col-span-5 md:block">Stack</span>
+        <span class="col-span-4 text-right md:col-span-3">Enlaces</span>
+      </div>
       {
-        projects.map((project) => (
-          <ProjectCard 
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            tags={project.tags}
-            repoUrl={project.repoUrl}
-            liveUrl={project.liveUrl}
-          />
+        others.map((p) => (
+          <div class="grid grid-cols-12 items-center gap-x-4 gap-y-1 border-b border-hairline px-4 py-4 transition hover:bg-surface">
+            <span class="col-span-8 font-medium md:col-span-4">{p.title}</span>
+            <span class="col-span-12 order-last font-mono text-xs text-muted md:order-none md:col-span-5">
+              {p.tags.join(" · ")}
+            </span>
+            <span class="col-span-4 flex justify-end gap-4 font-mono text-xs tracking-[0.04em] md:col-span-3">
+              {p.repoUrl && (
+                <a
+                  href={p.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Repositorio de ${p.title}`}
+                  class="text-muted transition hover:text-accent"
+                >
+                  Repo
+                </a>
+              )}
+              {p.liveUrl && (
+                <a
+                  href={p.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Demo de ${p.title}`}
+                  class="flex items-center gap-1 transition hover:text-accent"
+                >
+                  Demo
+                  <ArrowIcon />
+                </a>
+              )}
+            </span>
+          </div>
         ))
       }
     </div>

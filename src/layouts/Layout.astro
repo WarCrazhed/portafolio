@@ -1,10 +1,9 @@
 ---
 import Navbar from "../components/Layout/Navbar.astro";
-import Networks from "../components/Networks.astro";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,49 +31,76 @@ import Networks from "../components/Networks.astro";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script>
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
+    <script is:inline>
+      // Oscuro por defecto; el modo claro solo si el usuario lo eligió.
+      if (localStorage.theme === "light") {
         document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
       }
     </script>
   </head>
-  <body
-    class="bg-gradient-to-br dark:bg-gradient-to-br from-gray-200 via-blue-200 to-purple-200 dark:from-blue-950 dark:via-purple-950 dark:to-blue-950 bg-cover dark:text-white"
-  >
+  <body class="bg-bg text-ink font-sans antialiased">
     <Navbar />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <footer
-      class="bg-gray-950 py-16 w-full flex flex-col md:flex-row lg:flex-row justify-start gap-3 items-center border-t border-t-gray-800"
+      class="mx-auto flex max-w-site flex-col gap-1.5 border-t border-hairline px-5 py-7 font-mono text-xs tracking-[0.04em] text-dim md:flex-row md:items-center md:justify-between md:px-10 lg:px-16"
     >
-      <div class="container m-auto max-w-4xl">
-        <div
-          class="flex flex-col lg:flex-row justify-between items-center my-5 gap-8"
-        >
-          <div class="text-white text-sm text-center lg:text-left">
-            <p class="font-medium text-xl">
-              <span
-                class="transition-all duration-200 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text hover:text-transparent font-bold"
-                >Mario Zamora
-              </span>
-            </p>
-            <p class="text-xs">
-              ©{new Date().getFullYear()} Casi todos los derechos reservados
-            </p>
-          </div>
-          <div class="text-white">
-            <Networks />
-          </div>
-        </div>
-      </div>
+      <span>© {new Date().getFullYear()} Mario Zamora</span>
+      <span>Hecho con Astro + Tailwind · Jalisco, MX</span>
     </footer>
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --c-bg: 246 245 241;
+    --c-surface: 255 255 255;
+    --c-line: 226 224 218;
+    --c-hairline: 234 232 226;
+    --c-ink: 21 22 26;
+    --c-muted: 92 98 112;
+    --c-dim: 139 144 156;
+    --c-accent: 47 111 224;
+    --c-accent-ink: 255 255 255;
+    color-scheme: light;
+  }
+  :root.dark {
+    --c-bg: 15 16 19;
+    --c-surface: 22 24 29;
+    --c-line: 38 42 51;
+    --c-hairline: 31 35 43;
+    --c-ink: 233 232 227;
+    --c-muted: 139 144 156;
+    --c-dim: 92 98 112;
+    --c-accent: 76 141 255;
+    --c-accent-ink: 15 16 19;
+    color-scheme: dark;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgb(var(--c-hairline) / 0.7) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-hairline) / 0.7) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .reveal {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .reveal.d1 { animation-delay: 0.08s; }
+  .reveal.d2 { animation-delay: 0.16s; }
+  .reveal.d3 { animation-delay: 0.24s; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; }
+  }
+</style>

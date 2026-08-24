@@ -1,98 +1,99 @@
 ---
 import { Image } from "astro:assets";
-import Networks from "./Networks.astro";
 import { TextAnimate } from "./TextAnimate";
+import ArrowIcon from "./ArrowIcon.astro";
 import Profile from "../assets/profile.jpg";
+
 ---
 
-<section class="bg-blue-100/75 dark:bg-gray-950/75" id="home">
-  <section class="bg-gray-50/50 dark:bg-gray-950/50 rounded-br-full">
-    <div
-      class="min-h-screen container m-auto max-w-4xl flex flex-col justify-center px-4 py-20"
-    >
-      <div class="flex flex-row items-center gap-3 mt-10">
-        <div class="text-4xl">👋</div>
-        <h1 class="text-4xl font-extrabold text-gray-800 dark:text-gray-200">
-          Hola, soy Mario Zamora
-        </h1>
+<section id="home" class="grid-bg border-b border-hairline">
+  <div
+    class="mx-auto grid max-w-site gap-10 px-5 pb-20 pt-16 md:px-10 lg:grid-cols-12 lg:items-center lg:gap-8 lg:px-16 lg:pb-24 lg:pt-28"
+  >
+    <div class="flex flex-col gap-6 lg:col-span-7 lg:gap-8">
+      <p class="reveal font-mono text-[13px] tracking-[0.08em] text-accent">
+        // <TextAnimate client:load />
+      </p>
+      <h1
+        class="reveal d1 text-balance text-[40px] font-semibold leading-[1.02] tracking-[-0.03em] md:text-6xl lg:text-[84px] lg:leading-[0.98]"
+      >
+        Construyo plataformas web que la gente usa todos los días.
+      </h1>
+      <div class="reveal d2 flex max-w-[620px] flex-col gap-4 text-pretty text-base leading-relaxed text-muted md:text-lg lg:text-[19px]">
+        <p>
+          Soy un <strong class="font-semibold text-accent">Desarrollador FullStack</strong>
+          con experiencia en <strong class="font-medium text-ink">diseño de sistemas escalables</strong>
+          e interfaces intuitivas, enfocado en resolver problemas y construir
+          herramientas digitales que generan impacto positivo.
+        </p>
+        <p>
+          Como <strong class="font-semibold text-accent">Ingeniero en Desarrollo y Gestión de Software</strong>,
+          siempre estoy en busca de nuevos desafíos que me permitan crecer y
+          aportar valor con soluciones innovadoras.
+        </p>
       </div>
-      <TextAnimate client:load />
-      <div class="flex flex-col lg:flex-row items-center gap-8 mt-10">
-        <div>
-          <div
-            class="m-auto w-60 h-60 relative border-4 border-blue-500 rounded-full overflow-hidden"
+      <div class="reveal d3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+        <a
+          href="#projects"
+          class="flex h-12 items-center justify-center gap-2.5 rounded-lg bg-accent px-6 text-[15px] font-semibold text-accent-ink transition hover:brightness-110"
+        >
+          Ver proyectos
+          <ArrowIcon size={16} />
+        </a>
+        <div class="flex gap-3 sm:gap-4">
+          <a
+            href="https://github.com/WarCrazhed"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-12 flex-1 items-center justify-center rounded-lg border border-line px-5 text-[15px] font-medium transition hover:border-accent hover:text-accent"
           >
-            <Image
-              src={Profile}
-              alt="Imagen de Perfil"
-              width="240"
-              height="240"
-              class="object-cover object-center h-60"
-              loading="eager"
-            />
-          </div>
-        </div>
-        <div class="flex flex-col space-y-4">
-          <div class="text-gray-700 dark:text-gray-300 font-medium space-y-3">
-            <p>
-              <span
-                class="text-sm py-1 px-3 border border-blue-500 bg-sky-100/50 dark:bg-sky-900/50 rounded-full font-medium shadow mr-2"
-              >
-                Jalisco, México
-              </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="inline size-6 text-blue-500"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </p>
-            <p>
-              Soy un <span class="text-blue-500 font-bold"
-                >Desarrollador FullStack</span
-              > con experiencia en <span class="font-semibold"
-                >diseño de sistemas escalables</span
-              > e interfaces intuitivas, enfocado en resolver problemas y construir
-              herramientas digitales que generan impacto positivo.
-            </p>
-            <p>
-              Como <span class="text-blue-500 font-bold"
-                >Ingeniero en Desarrollo y Gestión de Software</span
-              >, siempre estoy en busca de nuevos desafíos que me permitan
-              crecer y aportar valor con soluciones innovadoras.
-            </p>
-          </div>
-          <div class="flex flex-wrap items-center gap-6">
-            <Networks />
-            <a
-              href="/cv/Mario-Zamora-CV.pdf"
-              download="Mario-Zamora-CV.pdf"
-              class="font-bold text-white bg-blue-600 hover:bg-blue-700 flex items-center gap-2 px-4 rounded-xl py-2 shadow transition"
-            >
-              Descargar CV
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
-                ></path>
-              </svg>
-            </a>
-          </div>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mario-zamora-b4bb07224/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-12 flex-1 items-center justify-center rounded-lg border border-line px-5 text-[15px] font-medium transition hover:border-accent hover:text-accent"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="flex flex-col gap-4 lg:col-span-5 lg:items-end">
+      <div
+        class="h-24 w-24 overflow-hidden rounded-xl border border-line bg-surface lg:h-[360px] lg:w-[360px] lg:rounded-2xl"
+      >
+        <Image
+          src={Profile}
+          alt="Mario Zamora"
+          width="480"
+          height="480"
+          class="h-full w-full object-cover object-center saturate-[0.9]"
+          loading="eager"
+        />
+      </div>
+      <div
+        class="flex w-full flex-col gap-3 rounded-xl border border-line bg-surface px-4 py-4 lg:w-[360px]"
+      >
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span
+              class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgb(52_211_153/0.15)]"
+            ></span>
+            <span class="font-mono text-xs uppercase tracking-[0.06em] text-muted">
+              Actualmente
+            </span>
+          </div>
+          <span class="font-mono text-xs text-dim">Jalisco, México</span>
+        </div>
+        <p class="text-[15px] leading-snug">
+          Gerente de Funcionalidad Tecnológica en <strong class="font-semibold">Humana 11</strong> — lidero un equipo
+          de 3 a cargo de 4 plataformas en producción.
+        </p>
+      </div>
+    </div>
+  </div>
+
 </section>

@@ -1,14 +1,128 @@
 ---
 import { BtnTheme } from "./BtnTheme";
 
+const links = [
+  { href: "#projects", label: "Proyectos" },
+  { href: "#experience", label: "Experiencia" },
+  { href: "#stack", label: "Stack" },
+  { href: "#education", label: "Educación" },
+  { href: "#contact", label: "Contacto" },
+];
 ---
-<nav aria-label="Navegación principal" class="w-full py-4 border-b border-indigo-300 dark:border-slate-800 drop-shadow-md lg:fixed top-0 left-0 z-50 backdrop-blur-md shadow-md  dark:border-b-gray-800 bg-slate-50 dark:bg-indigo-950 lg:bg-gray-100/50 dark:lg:bg-gray-900/50">
-    <div class="container mx-auto flex justify-center items-center gap-4 font-medium flex-col lg:flex-row text-sm">
-        <BtnTheme client:load />
-        <a href="#home" class="hover:text-blue-700 dark:hover:text-blue-400">Inicio</a>
-        <a href="#experience" class="hover:text-blue-700 dark:hover:text-blue-400">Experiencia</a>
-        <a href="#projects" class="hover:text-blue-700 dark:hover:text-blue-400">Proyectos</a>
-        <a href="#skill" class="hover:text-blue-700 dark:hover:text-blue-400">Habilidades</a>
-        <a href="#education" class="hover:text-blue-700 dark:hover:text-blue-400">Educación</a>
+
+<header
+  class="sticky top-0 z-50 border-b border-hairline bg-bg/85 backdrop-blur-md"
+>
+  <nav
+    aria-label="Navegación principal"
+    class="mx-auto flex h-[60px] max-w-site items-center justify-between px-5 md:px-10 lg:h-[72px] lg:px-16"
+  >
+    <a href="#home" class="font-mono text-[15px] font-semibold tracking-[0.02em]">
+      mz<span class="text-accent">.</span>dev
+    </a>
+
+    <ul
+      class="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.08em] text-muted lg:flex"
+    >
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="transition hover:text-ink">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex items-center gap-2 lg:gap-3">
+      <BtnTheme client:load />
+      <a
+        href="/cv/Mario-Zamora-CV.pdf"
+        download="Mario-Zamora-CV.pdf"
+        class="hidden h-10 items-center gap-2 rounded-lg border border-line px-4 font-mono text-xs uppercase tracking-[0.06em] transition hover:border-accent hover:text-accent lg:flex"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 3v12"></path>
+          <path d="m7 10 5 5 5-5"></path>
+          <path d="M4 19h16"></path>
+        </svg>
+        CV
+      </a>
+      <button
+        type="button"
+        id="nav-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        class="flex h-11 w-11 items-center justify-center rounded-lg border border-line lg:hidden"
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 17h16"></path>
+        </svg>
+      </button>
     </div>
-</nav>
+  </nav>
+
+  <div id="nav-menu" class="hidden border-t border-hairline lg:hidden">
+    <ul class="flex flex-col px-5 py-2 font-mono text-sm uppercase tracking-[0.08em]">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="block py-3 text-muted transition hover:text-ink">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href="/cv/Mario-Zamora-CV.pdf"
+          download="Mario-Zamora-CV.pdf"
+          class="block py-3 text-accent"
+        >
+          Descargar CV ↓
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+
+  toggle?.addEventListener("click", () => {
+    const open = !menu?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  });
+
+  menu?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+    })
+  );
+</script>
